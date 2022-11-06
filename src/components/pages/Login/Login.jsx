@@ -65,49 +65,47 @@ const Login = () => {
             {/*<h3>Iniciar sesión </h3>*/}
             <h1>telematica</h1>
             <h2 className='slogan'>Telemática te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</h2>
-          </div>      
+          </div>
           <form className='container-form' onSubmit={handleSubmit}>
-
-          <TextField className='email-field' 
-              type="text" 
-              label="Correo electrónico" 
-              variant="outlined" 
-              value={values.email || ""} 
-              onChange={ (e)=>{
-                setFieldValue( "email" , e.target.value )
-              }}
-            />
-
-          <FormControl sx={{ m: 1, width: '42ch' }} variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-password">Contraseña</InputLabel>
-            <OutlinedInput 
-              id="outlined-adornment-password"
-              type={showPassword ? 'text' : 'password'}
-              value={values.password || ""}
-              onChange={ (e)=>{
-                setFieldValue("password", e.target.value)
-              }}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={ ()=> setShowPassword(!showPassword)}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-              label="Contraseña"
-            />
-          </FormControl>
-            <Button className='email-field' variant="contained" color="info" type='submit'>Iniciar sesión</Button>
-            <Button variant="text" color="info" >¿Olvidaste tu contraseña?</Button>
-            <Button variant="contained" color="success" onClick={() => {alert('clicked'); }}>Crear cuenta nueva</Button>
+            <TextField className='email-field' 
+                type="text" 
+                label="Correo electrónico" 
+                variant="outlined" 
+                value={values.email || ""} 
+                onChange={ (e)=>{
+                  setFieldValue( "email" , e.target.value )
+                }}
+              />
+            <FormControl sx={{ m: 1, width: '38ch' }} variant="outlined">
+              <InputLabel htmlFor="outlined-adornment-password">Contraseña</InputLabel>
+              <OutlinedInput 
+                id="outlined-adornment-password"
+                type={showPassword ? 'text' : 'password'}
+                value={values.password || ""}
+                onChange={ (e)=>{
+                  setFieldValue("password", e.target.value)
+                }}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={ ()=> setShowPassword(!showPassword)}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Contraseña"
+              />
+            </FormControl>
+              <Button className='email-field' variant="contained" color="info" type='submit'>Iniciar sesión</Button>
+              <Button variant="text" color="info" >¿Olvidaste tu contraseña?</Button>
+              <Button variant="contained" color="success" onClick={() => {alert('clicked'); }}>Crear cuenta nueva</Button>
           </form>
         </div>
-      </section>
       <Footer/>
+      </section>
     </div>
   )
 }
