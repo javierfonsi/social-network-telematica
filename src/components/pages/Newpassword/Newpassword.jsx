@@ -3,23 +3,15 @@ import { useNavigate } from 'react-router-dom'
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from 'axios'
-import "./login.css"
+import "./Newpassword.css"
 import { Button, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import Footer from '../../layaout/footerLayout/Footer';
-//import imagen from './tele.jpg'
-//import Footer from ".../layaout/";
 
-const Login = () => {
+const Newpassword = () => {
 
+    
     const navigate = useNavigate()
     const [showPassword, setShowPassword ] = useState(false)
-
-    //const signUp = () => {
-    //  console.log("Antes de ir a navigate")
-    //  navigate("/newuser")
-    //  //<CreateAccount/>
-    //}
 
     const getInitialValues = ()=>{
       return {
@@ -43,12 +35,10 @@ const Login = () => {
         password: data.password
       }
 
-      //axios.post("https://apprestaurantapijr.herokuapp.com/api/v1/adminuser/login" , arg )
-      axios.post("https://socialnetwork-telematica.herokuapp.com/api/v1/users/login" , arg )
+      axios.post("https://apprestaurantapijr.herokuapp.com/api/v1/adminuser/login" , arg )
         .then( res => {
-          console.log(res.data)
-          //localStorage.setItem( "token", res.data.data.token)
-          //navigate("/home") 
+          localStorage.setItem( "token", res.data.data.token)
+          navigate("/home") 
         })
         .catch( err => console.log(err.response.data.message))
 
@@ -65,14 +55,11 @@ const Login = () => {
     })
 
   return (
-    <div className='layaut'>
       <section className='main'>
         <div className='main-card'>
           <div className='title'>
-            {/*<img className='logo' src={imagen} alt="" />*/}
-            {/*<h3>Iniciar sesión </h3>*/}
-            <h1>telematica</h1>
-            <h2 className='slogan'>Telemática te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</h2>
+            <h3>Recupera tu cuenta</h3>
+            <span className='sub-title'>Ingresa tu correo electrónico y nuevo password.</span>
           </div>
           <form className='container-form' onSubmit={handleSubmit}>
             <TextField className='email-field' 
@@ -107,15 +94,12 @@ const Login = () => {
                 label="Contraseña"
               />
             </FormControl>
-              <Button className='email-field' variant="contained" color="info" type='submit'>Iniciar sesión</Button>
-              <Button variant="text" color="info" onClick={() => {navigate("/newpassword") }}>¿Olvidaste tu contraseña?</Button>
-              <Button variant="contained" color="success" onClick={() => {navigate("/newuser") }}>Crear cuenta nueva</Button>
+            <Button variant="contained" color="info" type='submit'>Buscar</Button>
+            <Button variant="contained" color="secondary" onClick={() => {navigate("/") }}>Cancelar</Button>
           </form>
         </div>
-      <Footer/>
       </section>
-    </div>
   )
 }
 
-export default Login
+export default Newpassword

@@ -5,13 +5,17 @@ import { ProtectedRoutes } from "./Router/ProtectedRoutes";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HeaderLayout from "./components/layaout/headerLayout/HeaderLayout";
+import CreateAccount from "./components/pages/CreateAccount/CreateAccount";
+import Newpassword from "./components/pages/Newpassword/Newpassword";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login/>}/>
-        
+        <Route path="/newuser" element={<CreateAccount/>}/>
+        <Route path="/newpassword" element={<Newpassword/>}/>
+                     
         <Route element={<ProtectedRoutes/>}>
           <Route element={<HeaderLayout/>}>
             <Route path="/home" element={<Home/>}/>
