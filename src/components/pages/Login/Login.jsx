@@ -103,7 +103,7 @@ const Login = () => {
           </FormControl>
             <Button className='email-field' variant="contained" color="info" type='submit'>Iniciar sesión</Button>
             <Button variant="text" color="info" >¿Olvidaste tu contraseña?</Button>
-            <Button variant="contained" color="success" type='submit'>Crear cuenta nueva</Button>
+            <Button variant="contained" color="success" onClick={() => {alert('clicked'); }}>Crear cuenta nueva</Button>
           </form>
         </div>
       </section>
