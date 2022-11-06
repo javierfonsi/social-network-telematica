@@ -1,18 +1,23 @@
+.layaut{
+    margin: 0;
+    padding: 0;
+    /*background-color: #F0F2F5;*/
+}
+
 .main{
     display: flex;
     flex-direction: column;
-    margin: 300px auto;
-    width: 95%;
-    height: 456px;
     align-items: center;
     justify-content: center;
-    border: solid orange 2px;
+    height: 800px;
+    background-color: #F0F2F5;
 }
 
 .main-card{
     display: flex;
     width: 1003px;
-    height: 456px;
+    height: 536px;
+    padding: 72px 0px 112px;
     /*border: solid 4px #0478DF;*/
     justify-content:space-around;
     align-items: center;
@@ -68,7 +73,9 @@ h1{
 }
 
 .email-field{
-    width: 364px
+    width: 364px;
+    height: 52;
+    padding: 14px 16px;
 }
 
 .container-login{
@@ -87,4 +94,3 @@ h1{
     flex-direction: column;
     justify-content: center;
 }
-

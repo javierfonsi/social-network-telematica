@@ -15,6 +15,7 @@ function App() {
         <Route element={<ProtectedRoutes/>}>
           <Route element={<HeaderLayout/>}>
             <Route path="/home" element={<Home/>}/>
+            
           </Route>
         </Route>
       </Routes>

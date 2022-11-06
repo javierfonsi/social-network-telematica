@@ -20,13 +20,12 @@ const Home = () => {
 
   return (
     <div>
-        <h1 className='title-home'>Home</h1>
+        <h2 className='title-home'>Home</h2>
         {
             menus.map(menu => (
                 <Card menu={menu} key={menu.id}/>
             ))
         }
-        <h2>Esto es el home</h2>
     </div>
   )
 }
