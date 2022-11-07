@@ -9,7 +9,7 @@
 }
 
 .opt-req{
-    width: 28%;
+    /*width: 49%;    */
     /*border: solid 2px red;*/
     display: flex;
     align-items: center;
@@ -21,10 +21,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /*width: 30%;*/
 }
 
 .logo{
     height: 50px;
     width: 50px;
     border-radius: 50%;
+}
+
+.req-but-header{
+    width: 20px;
+    font-size: 8px;
+}
+
+.for-but-header{
+    width: 54px;
+    font-size: 6px;
+    size: 'small';
+    /*border: solid 20px red;*/
+}
+
+@media only screen and (min-width: 401px){
+
 }
