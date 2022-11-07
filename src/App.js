@@ -3,14 +3,14 @@ import Login from "./components/pages/Login/Login";
 import Home from "./components/pages/Home/Home"
 import { ProtectedRoutes } from "./Router/ProtectedRoutes";
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import HeaderLayout from "./components/layaout/headerLayout/HeaderLayout";
 import CreateAccount from "./components/pages/CreateAccount/CreateAccount";
 import Newpassword from "./components/pages/Newpassword/Newpassword";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Login/>}/>
         <Route path="/newuser" element={<CreateAccount/>}/>
@@ -23,7 +23,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
