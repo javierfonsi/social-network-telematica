@@ -16,3 +16,15 @@
     height: 30px;
     justify-content: space-evenly;
 }
+
+.opt-owner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}

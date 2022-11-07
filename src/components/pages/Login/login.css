@@ -1,27 +1,25 @@
 .layaut{
     margin: 0;
     padding: 0;
-    /*background-color: #F0F2F5;*/
 }
 
 .main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*justify-content: center;*/
-    height: 760px;
+    height: 740px;
     background-color: #F0F2F5;
+    /*border: solid 2px red;*/
 }
     
 .main-card{
     display: flex;
     flex-direction: column;
     width: 362px;
-    height: 570px;
-    padding: 10px 0px 120px;
     /*border: solid 1px #0478DF;*/
-    justify-content:space-between;
-    /*align-items: center;*/
+    justify-content:space-evenly;
+    padding-bottom: 100px;
+
 }
 
 .title{
@@ -72,7 +70,7 @@ h1{
     border-radius: 16px;
     margin: 0 auto;
     display: flex;
-    height: 80vh;
+    height: 360px;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
@@ -88,17 +86,17 @@ h1{
 
 @media only screen and (min-width: 901px){    
     .main{
-        height: 720px;
+        height: 740px;
     }
 
     .main-card{
         display: flex;
         flex-direction: row;
-        height: 620px;
-        /*justify-content: center;*/
+        height: 660px;
+        justify-content: center;
         align-items: center;
-        width: 980px;
-        padding: 72px 0px 162px;
+        width: 900px;
+        /*padding: 72px 0px 162px;*/
         /*border: solid 4px #0478DF;*/
     }
     
@@ -123,9 +121,13 @@ h1{
     }
 
     .container-form{
-        height: 52vh;
-        width: 410px;
+        height: 360px;
+        width: 370px;
+        display: flex;
+        flex-direction: column;
         background-color: white;
+        justify-content: space-around;
+        /*border: 2px solid red;*/
     }
      
 }

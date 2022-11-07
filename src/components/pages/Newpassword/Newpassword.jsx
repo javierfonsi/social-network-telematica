@@ -94,7 +94,7 @@ const Newpassword = () => {
                 label="Contraseña"
               />
             </FormControl>
-            <Button variant="contained" color="info" type='submit'>Buscar</Button>
+            <Button variant="contained" color="info" type='submit'>Cambiar contraseña</Button>
             <Button variant="contained" color="secondary" onClick={() => {navigate("/") }}>Cancelar</Button>
           </form>
         </div>

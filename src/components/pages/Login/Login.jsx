@@ -1,25 +1,28 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import axios from 'axios'
 import "./login.css"
 import { Button, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import Footer from '../../layaout/footerLayout/Footer';
-//import imagen from './tele.jpg'
-//import Footer from ".../layaout/";
+import { userLogin } from '../../../store/auth/thunk';
 
 const Login = () => {
+    const {userInfo} = useSelector((state)=>state.auth)
+
+    const dispatch = useDispatch() 
 
     const navigate = useNavigate()
     const [showPassword, setShowPassword ] = useState(false)
 
-    //const signUp = () => {
-    //  console.log("Antes de ir a navigate")
-    //  navigate("/newuser")
-    //  //<CreateAccount/>
-    //}
+    useEffect(()=>{
+      if(userInfo){
+        navigate('/home')
+      }
+
+    }, [userInfo, navigate])
 
     const getInitialValues = ()=>{
       return {
@@ -37,20 +40,15 @@ const Login = () => {
       );
     }
 
-    const onSubmit = ( data )=>{
-      let arg = {
-        email: data.email,
-        password: data.password
+    const onSubmit = ( x )=>{
+      let data = {
+        email: x.email,
+        password: x.password
       }
 
-      //axios.post("https://apprestaurantapijr.herokuapp.com/api/v1/adminuser/login" , arg )
-      axios.post("https://socialnetwork-telematica.herokuapp.com/api/v1/users/login" , arg )
-        .then( res => {
-          console.log(res.data)
-          //localStorage.setItem( "token", res.data.data.token)
-          //navigate("/home") 
-        })
-        .catch( err => console.log(err.response.data.message))
+      dispatch(userLogin(data))
+
+
 
     }
 
@@ -69,8 +67,6 @@ const Login = () => {
       <section className='main'>
         <div className='main-card'>
           <div className='title'>
-            {/*<img className='logo' src={imagen} alt="" />*/}
-            {/*<h3>Iniciar sesión </h3>*/}
             <h1>telematica</h1>
             <h2 className='slogan'>Telemática te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</h2>
           </div>
@@ -112,7 +108,7 @@ const Login = () => {
               <Button variant="contained" color="success" onClick={() => {navigate("/newuser") }}>Crear cuenta nueva</Button>
           </form>
         </div>
-      <Footer/>
+        <Footer/>
       </section>
     </div>
   )
