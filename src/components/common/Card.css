@@ -1,0 +1,12 @@
+.each-user{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    width: 280px;
+    box-shadow: 0px 0px 20px #9EDEDE;
+    padding: 10px 20px;
+    border-radius: 14px;
+    border: solid 2px red;
+    background-color: #cef4ee;
+    margin-bottom: 20px;
+
+}

@@ -1,11 +1,25 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { Button} from '@mui/material';
 import './Navbar.css'
 import imagen from './tele.jpg'
 import { useNavigate } from 'react-router-dom';
+import { logout } from '../../../store/auth/authSlice';
 
 const NavBar = () => {
   const navigate = useNavigate()
+
+  const dispatch = useDispatch()
+
+  const out = () => {
+
+    dispatch(logout())
+    navigate('/')
+    
+    }
+
+  
+
   return (
     <div className='container-navbar'>
       <div className="opt-req">
@@ -16,8 +30,7 @@ const NavBar = () => {
         <img className='logo' src={imagen} alt="logo-telematica" />
       <div className="opt-owner">
         <Button className='for-but-header' variant="contained" color="success" type='submit'>Perfil</Button>
-        <Button className='for-but-header' variant="contained" color="error" onClick={() => {localStorage.clear()
-        navigate('/')}}>Salir</Button>
+        <Button className='for-but-header' variant="contained" color="error" onClick={() => out()}>Salir</Button>
       </div>
     </div>
   )

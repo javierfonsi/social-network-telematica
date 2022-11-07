@@ -1,10 +1,11 @@
 import React from 'react'
+import './Card.css'
 
-const Card = ({menu}) => {
+const Card = ({user}) => {
   return (
-    <div>
-        <h2>{menu?.name}</h2>
-        <h2>{menu?.price}</h2>
+    <div className='each-user'>
+        <h3>{user?.name } {user?.lastName}</h3>
+        <h4>{user?.phone}</h4>
     </div>
   )
 }

@@ -1,31 +1,36 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useEffect } from 'react'
 
 import './Home.css'
+import {useDispatch, useSelector} from 'react-redux'
 import Card from '../../common/Card'
+import { getUsers } from '../../../store/users/thunk'
+import Footer from '../../layaout/footerLayout/Footer'
 
 const Home = () => {
+  const dispatch = useDispatch()
 
-    const [menus, setMenus] = useState([])
+  const {users} = useSelector((state)=>state.users)
 
+  //console.log(users)
 
     useEffect(() =>{
-        axios.get("https://apprestaurantapijr.herokuapp.com/api/v1/menus")
-            .then(res => setMenus(res.data.data.menu))
-            .catch(err => console.log(err))
-    }, [])
+      dispatch(getUsers())
+     }, [dispatch])
 
 
 
 
   return (
-    <div>
-        <h2 className='title-home'>Home</h2>
+    <div className='home-main'>
+      <h2 className="current-user">Usuarios actuales</h2>
+      <div className='card-main'>
         {
-            menus.map(menu => (
-                <Card menu={menu} key={menu.id}/>
-            ))
+          users.map(user=>(
+            <Card user = {user} key={user.id}/>
+          ))
         }
+      </div>
+      <Footer/>
     </div>
   )
 }
