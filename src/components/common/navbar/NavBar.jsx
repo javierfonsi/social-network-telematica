@@ -6,7 +6,7 @@ import imagen from './tele.jpg'
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../../../store/auth/authSlice';
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
-import { indigo } from '@mui/material/colors';
+//import { indigo } from '@mui/material/colors';
 //import SettingsIcon from '@mui/icons-material/Settings';
 
 const NavBar = () => {
@@ -14,7 +14,7 @@ const NavBar = () => {
 
   const dispatch = useDispatch()  
 
-  const joha = indigo[900]
+  //const joha = indigo[900]
 
   const out = () => {
 
@@ -34,9 +34,9 @@ const NavBar = () => {
         </div>
         <div className="four-elements">
           <div className='three-elements'>
-            <Button className='for-but-header' variant="contained" joha type='submit'>Anuncios</Button>
-            <Button className='req-but-header' variant="contained" joha type='submit'>Ventas</Button>
-            <Button className='for-but-header' variant="contained" joha type='submit'>Mensajes</Button>
+            <Button className='for-but-header' variant="contained" color='info' type='submit'>Anuncios</Button>
+            <Button className='req-but-header' variant="contained" color='info' type='submit'>Ventas</Button>
+            <Button className='for-but-header' variant="contained" color='info' type='submit'>Mensajes</Button>
           </div>
           <Button className='req-but-header' variant="contained" color="success" type='submit'>Perfil</Button>
         </div>
