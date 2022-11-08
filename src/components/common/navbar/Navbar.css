@@ -27,7 +27,7 @@
 }
 
 .title-navbar{
-    color: #0478DF;
+    color: #082763;
     font-size: 30px;
     font-style: italic;
     height: 50px;
@@ -69,8 +69,9 @@
 }
 
 .end-session{
-    width: 10px;
-    height: 16px;
+    width: 25px;
+    height: 23px;
+    margin-right: 30px;
 }
 
 

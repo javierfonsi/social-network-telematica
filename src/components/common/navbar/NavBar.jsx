@@ -41,7 +41,8 @@ const NavBar = () => {
           <Button className='req-but-header' variant="contained" color="success" type='submit'>Perfil</Button>
         </div>
         <div className="logout-nav">
-          <Button className='end-session' variant="contained"  onClick={() => out()  }><MeetingRoomIcon fontSize='small'/></Button>
+          <MeetingRoomIcon className='end-session' fontSize='small' onClick={() => out()  }/>
+          {/*<MeetingRoomIcon fontSize='small' onClick={() => out()  }/>*/}
         </div>
       </section>
     </div>

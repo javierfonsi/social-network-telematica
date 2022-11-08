@@ -6,7 +6,13 @@
     padding: 10px 20px;
     border-radius: 14px;
     /*border: solid 2px red;*/
-    background-color: #C4D7E0;
+    background-color: #082763;
+    color:azure;
     margin-bottom: 20px;
+}
 
+.card-button{
+    background: #082763;
+    color: azure;
+    border-style: none;
 }
