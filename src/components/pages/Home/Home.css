@@ -12,3 +12,13 @@
     align-items: center;
     padding-bottom: 100px;
 }
+
+.container-load{
+    height: 80vh;
+    width: 300px;
+    border: solid 20px red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
