@@ -10,18 +10,14 @@ const Home = () => {
   const dispatch = useDispatch()
 
   const {users} = useSelector((state)=>state.users)
-  const [load, setLoad] = useState(false)
+  const [load, setLoad] = useState(true)
 
   //console.log(users)
 
     useEffect(() =>{
       dispatch(getUsers())
-      users? setLoad(false): setLoad(true)
+      users.length >0? setLoad(false): setLoad(true)
      }, [dispatch, users])
-
-
-
-
 
   return (
     <div className='home-main'>

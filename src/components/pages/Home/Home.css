@@ -16,7 +16,7 @@
 .container-load{
     height: 80vh;
     width: 300px;
-    border: solid 20px red;
+    /*border: solid 20px red;*/
     display: flex;
     flex-direction: column;
     align-items: center;
