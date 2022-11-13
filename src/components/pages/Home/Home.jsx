@@ -17,6 +17,8 @@ const Home = () => {
       dispatch(getUsers())
      }, [dispatch])
 
+     console.log(users)
+
 
 
 
