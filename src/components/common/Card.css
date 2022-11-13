@@ -1,18 +1,52 @@
+:root {
+    --bg-color: hsl(230, 17%, 14%);
+    --bg-card: hsl(228, 28%, 20%);
+    --text-color-white: hsl(0, 0%, 100%);
+    --text-color-gray: hsl(228, 34%, 66%);
+    --border-color-facebook: hsl(208, 92%, 53%);
+    --border-color-twitter: hsl(203, 89%, 53%);
+    --border-color-instagram-1: hsl(37, 97%, 70%);
+    --border-color-instagram-2: hsl(329, 70%, 58%);
+    --border-color-youtube: hsl(348, 97%, 39%);
+    --border-color-bg-1: hsl(210, 78%, 56%);
+    --border-color-bg-2: hsl(146, 68%, 55%);
+    --border-color-up: hsl(163, 72%, 41%);
+    --border-color-down: hsl(356, 69%, 56%);
+}
+
+.light-mode{
+    --bg-color: hsl(0, 0%, 100%);
+    --bg-card: hsl(227, 47%, 96%);
+    --text-color-gray: hsl(228, 12%, 44%);
+    --text-color-white: hsl(230, 17%, 14%);
+    /*--bg-c: hsl(, %, 0%);*/
+}
+
 .each-user{
     /*display: flex;*/
     /*flex-direction: column;*/
     width: 280px;
     box-shadow: 0px 0px 20px #9EDEDE;
+    /*box-shadow: 0px 0px 20px #082763;*/
     padding: 10px 20px;
     border-radius: 14px;
     /*border: solid 2px red;*/
-    background-color: #082763;
+    /*background-color: #082763;*/
+    height: 105px;
+    background: var(--bg-card);
     color:azure;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
+}
+
+.user-name{
+    font-size: 20px;
 }
 
 .card-button{
     background: #082763;
+    background: var(--bg-card);
     color: azure;
     border-style: none;
+    /*margin: 0%;*/
+    /*padding: 0%;*/
 }
