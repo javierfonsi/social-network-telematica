@@ -63,19 +63,62 @@
 
 .logout-nav{
     display: flex;
-    justify-content: right;
-    margin-top: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*margin-top: 8px;*/
 
 }
 
 .end-session{
     width: 25px;
     height: 23px;
-    margin-right: 30px;
+    margin-top: 5px;
+    /*margin-right: 30px;*/
 }
 
 
 
-/*@media only screen and (min-width: 401px){
+@media only screen and (min-width: 691px){
+    .main-navbar{
+        width: 680px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-}*/
+    }
+
+    .logout-nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        margin-left: 110px;   
+    }
+
+    .end-session{
+        width: 40px;
+        height: 40px;
+        margin-top: 0px;
+        margin-left: 30px;
+        /*margin-right: 30px;*/
+    }
+ 
+    .three-elements{
+        display: flex;
+        width: 360px;
+        /*height: 40px;*/
+        justify-content: space-between;
+    }
+    
+    .four-elements{
+        display: flex;
+        flex-direction: row;
+        /*align-items: center;*/
+        /*border: solid 2px red;*/
+        justify-content: center;
+        align-items: center;
+        width: 640px;
+    }
+    
+}

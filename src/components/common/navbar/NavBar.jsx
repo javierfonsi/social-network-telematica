@@ -34,15 +34,18 @@ const NavBar = () => {
         </div>
         <div className="four-elements">
           <div className='three-elements'>
-            <Button className='for-but-header' variant="contained" color='info' type='submit'>Anuncios</Button>
+            <Button className='for-but-header' variant="contained" color='info' type='submit'
+            sx={{ '@media print': { width: 300, }, size:'large',
+            }}
+            >Anuncios</Button>
             <Button className='req-but-header' variant="contained" color='info' type='submit'>Ventas</Button>
             <Button className='for-but-header' variant="contained" color='info' type='submit'>Mensajes</Button>
           </div>
+          <div className="logout-nav">
           <Button className='req-but-header' variant="contained" color="success" type='submit'>Perfil</Button>
-        </div>
-        <div className="logout-nav">
           <MeetingRoomIcon className='end-session' fontSize='small' onClick={() => out()  }/>
           {/*<MeetingRoomIcon fontSize='small' onClick={() => out()  }/>*/}
+          </div>
         </div>
       </section>
     </div>

@@ -10,7 +10,8 @@ const Card = ({user}) => {
     <div className='each-user'>
         <h3 className='user-name-title'>{user?.name } {user?.lastName}</h3>
         
-        <button className='card-button' onClick={() => {console.log(user.id)}}> 
+        {/*<button className='card-button' onClick={() => {console.log(user.id)}}> */}
+        <button className='card-button'> 
           <Fab color="success" aria-label="add" size="small"> 
             {
               user?.profile==="Laboratorios" ? <BiotechSharpIcon/> : 
