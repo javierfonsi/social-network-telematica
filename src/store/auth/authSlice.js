@@ -39,6 +39,7 @@ export const authSlice = createSlice({
       state.error = null
     },
     [userLogin.fulfilled]: (state, { payload }) => {
+      state.isAutenticate = true
       state.loading = false
       state.userInfo = payload.data.userData
       state.userToken = payload.data.token

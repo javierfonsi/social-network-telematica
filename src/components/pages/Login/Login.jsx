@@ -10,7 +10,7 @@ import Footer from '../../layaout/footerLayout/Footer';
 import { userLogin } from '../../../store/auth/thunk';
 
 const Login = () => {
-    const {userInfo} = useSelector((state)=>state.auth)
+    const {userInfo, isAutenticate} = useSelector((state)=>state.auth)
 
     const dispatch = useDispatch() 
 
@@ -18,11 +18,11 @@ const Login = () => {
     const [showPassword, setShowPassword ] = useState(false)
 
     useEffect(()=>{
-      if(userInfo){
+      if(userInfo && isAutenticate){
         navigate('/home')
       }
 
-    }, [userInfo, navigate])
+    }, [userInfo, navigate, isAutenticate])
 
     const getInitialValues = ()=>{
       return {

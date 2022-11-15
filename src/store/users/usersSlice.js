@@ -3,6 +3,7 @@ import { getUsers } from './thunk'
 
 const initialState = {
   users : [],
+  isLoading: false
 }
 
 export const usersSlice = createSlice({
@@ -12,12 +13,17 @@ export const usersSlice = createSlice({
   },
   extraReducers: {
     [getUsers.pending]: (state) => {
+      state.isLoading = true
     },
     [getUsers.fulfilled]: (state, { payload }) => {
       state.users = payload.data.allUser
+      state.isLoading = false
+
       //console.log(payload)
     },
     [getUsers.rejected]: (state, { payload }) => {
+      state.isLoading = false
+
     },
 
   }

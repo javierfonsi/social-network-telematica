@@ -9,28 +9,30 @@ import Loading from '../../common/loading/Loading'
 const Home = () => {
   const dispatch = useDispatch()
 
-  const {users} = useSelector((state)=>state.users)
-  const [load, setLoad] = useState(true)
-
-  //console.log(users)
+  //const [load, setLoad] = useState(true)
+  const {users, isLoading} = useSelector((state)=>state.users)
+  const {userInfo} = useSelector((state)=>state.auth)
+  
+  console.log(users)
 
     useEffect(() =>{
       dispatch(getUsers())
-      users.length >0? setLoad(false): setLoad(true)
-     }, [dispatch, users])
+     }, [dispatch])
+
+    
 
   return (
     <div className='home-main'>
       <h2 className="current-user">Usuarios actuales</h2>
         {
-          load? <div className="container-load"><Loading/></div> :         
+          isLoading? <div className="container-load"><Loading/></div> :(
           <div className='card-main'>
             {
               users.map(user=>(
                 <Card user = {user} key={user.id}/>
               ))
             }
-          </div>
+          </div>)
         }
         <Footer/>
     </div>
