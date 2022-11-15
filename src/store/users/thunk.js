@@ -1,13 +1,21 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axiosInstance from "../../axiosInstance";
+import axios from "axios";
+//import axiosInstance from "../../axiosInstance";
 
   export const getUsers = createAsyncThunk(
     'get/user',
     async (argument, { rejectWithValue }) => {
       try {
+        const config = {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization' : `Bearer ${localStorage.getItem("userToken")}`
+          },
+        }
+
         // configure header's Content-Type as JSON
-        const { data } = await axiosInstance.get(
-            "/users"
+        const { data } = await axios.get(
+            "https://socialnetwork-telematica.herokuapp.com/api/v1/users", config
         )
         //console.log(data)
         return data
