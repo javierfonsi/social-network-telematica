@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import './Home.css'
 import {useDispatch, useSelector} from 'react-redux'
 import Card from '../../common/Card'
@@ -11,9 +11,7 @@ const Home = () => {
 
   //const [load, setLoad] = useState(true)
   const {users, isLoading} = useSelector((state)=>state.users)
-  const {userInfo} = useSelector((state)=>state.auth)
   
-  console.log(users)
 
     useEffect(() =>{
       dispatch(getUsers())
