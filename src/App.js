@@ -7,6 +7,12 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import HeaderLayout from "./components/layaout/headerLayout/HeaderLayout";
 import CreateAccount from "./components/pages/CreateAccount/CreateAccount";
 import Newpassword from "./components/pages/Newpassword/Newpassword";
+import Messages from "./components/pages/Messages/Messages";
+import Perfil from "./components/pages/Perfil/Perfil";
+import Ventas from "./components/pages/Ventas/Ventas";
+import Anuncios from "./components/pages/Anuncios/Anuncios";
+
+
 
 function App() {
   return (
@@ -19,6 +25,10 @@ function App() {
         <Route element={<ProtectedRoutes/>}>
           <Route element={<HeaderLayout/>}>
             <Route path="/home" element={<Home/>}/>
+            <Route path="/messages" element={<Messages/>}/>
+            <Route path="/account" element={<Perfil/>}/>
+            <Route path="/sales" element={<Ventas/>}/>
+            <Route path="/ads" element={<Anuncios/>}/>
             
           </Route>
         </Route>

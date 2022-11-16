@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import App from './App';
 import './index.css';
+//ultima importacion MUI
 
 const container = document.getElementById('root');
 const root = createRoot(container);

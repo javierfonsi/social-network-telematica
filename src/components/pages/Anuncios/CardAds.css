@@ -1,0 +1,28 @@
+.each-ad{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    width: 280px;
+    box-shadow: 0px 0px 20px #9EDEDE;
+    /*box-shadow: 0px 0px 20px #082763;*/
+    padding: 10px 20px;
+    border-radius: 14px;
+    /*border: solid 2px red;*/
+    /*background-color: #082763;*/
+    height: 105px;
+    background: var(--bg-card);
+    color:azure;
+    /*margin-bottom: 20px;*/
+}
+
+.ad-name{
+    font-size: 20px;
+}
+
+.card-button{
+    background: #082763;
+    background: var(--bg-card);
+    color: azure;
+    border-style: none;
+    /*margin: 0%;*/
+    /*padding: 0%;*/
+}
