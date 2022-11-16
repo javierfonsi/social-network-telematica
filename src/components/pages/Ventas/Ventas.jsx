@@ -1,8 +1,11 @@
 import React from 'react'
+import '../Home/Home.css'
 
 const Ventas = () => {
   return (
-    <div>Vista de Ventas</div>
+    <div>
+      <h4 className="current-subtitle">Ventas</h4>
+    </div>
   )
 }
 

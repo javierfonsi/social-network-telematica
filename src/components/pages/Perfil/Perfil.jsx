@@ -1,8 +1,11 @@
 import React from 'react'
+import '../Home/Home.css'
 
 const Perfil = () => {
   return (
-    <div>Vista de Perfil</div>
+    <div>
+      <h4 className='current-subtitle' > Mi cuenta </h4> 
+    </div>
   )
 }
 

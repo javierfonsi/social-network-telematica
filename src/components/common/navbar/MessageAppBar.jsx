@@ -1,70 +1,69 @@
-import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import { useDispatch } from 'react-redux';
+import React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { logout } from "../../../store/auth/authSlice"
+import { logout } from "../../../store/auth/authSlice";
 //import { logout } from "../../../store/auth/authSlice";
 //import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Anuncios', 'Ventas', 'Mensajes'];
-const settings = ['Perfil', 'Cerrar Session'];
+const pages = ["Anuncios", "Ventas", "Mensajes"];
+const settings = ["Perfil", "Cerrar Session", "Contactos"];
 
 function MessageAppBar() {
-
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-//  const [Nav, setNav] = React.useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-    console.log("Javier", event.currentTarget)
-};
-const handleOpenUserMenu = (event) => {
+  };
+  const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-};
+  };
 
-const handleCloseNavMenu = (x) => {
-  if(x==="Anuncios"){
-      navigate("/ads")
-}else if(x==="Ventas"){
-  navigate("/sales")
-}else{
-  navigate("/messages")
-}
-  //console.log(x)
-  setAnchorElNav(null);
-};
+  const handleCloseNavMenu = (x) => {
+    if (x === "Anuncios") {
+      navigate("/ads");
+    } else if (x === "Ventas") {
+      navigate("/sales");
+    } else {
+      navigate("/messages");
+    }
+    //console.log(x)
+    setAnchorElNav(null);
+  };
 
   const handleCloseUserMenu = (x) => {
-    console.log(anchorElUser)
-    if(x==="Cerrar Session"){
-        dispatch(logout()) 
-          navigate("/")
-    }else if(x==="Perfil"){
-      navigate("/account")
+    console.log(anchorElUser);
+    if (x === "Cerrar Session") {
+      dispatch(logout());
+      navigate("/");
+    } else if (x === "Perfil") {
+      navigate("/account");
+    } else {
+      navigate("/home");
     }
     setAnchorElUser(null);
-    console.log("Cerrando menu perfil")
+    console.log("Cerrando menu perfil");
   };
 
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -79,33 +78,33 @@ const handleCloseNavMenu = (x) => {
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
               //onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={()=>handleCloseNavMenu(page)}>
+                <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={()=>handleCloseNavMenu(page)}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                onClick={() => handleCloseNavMenu(page)}
+                sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
               </Button>
@@ -119,23 +118,26 @@ const handleCloseNavMenu = (x) => {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={()=>handleCloseUserMenu(setting)}>
+                <MenuItem
+                  key={setting}
+                  onClick={() => handleCloseUserMenu(setting)}
+                >
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

@@ -110,20 +110,20 @@ const CreateAccount = () => {
             </div>
             <TextField  sx={{ m: 1, width: '37ch' }}
                 type="text" 
-                label="Correo electrónico" 
-                variant="outlined" 
-                value={values.email || ""} 
-                onChange={ (e)=>{
-                  setFieldValue( "email" , e.target.value )
-                }}
-              />
-            <TextField  sx={{ m: 1, width: '37ch' }}
-                type="text" 
                 label="Telefono" 
                 variant="outlined" 
                 value={values.phone || ""} 
                 onChange={ (e)=>{
                   setFieldValue( "phone" , e.target.value )
+                }}
+              />
+            <TextField  sx={{ m: 1, width: '37ch' }}
+                type="text" 
+                label="Correo electrónico" 
+                variant="outlined" 
+                value={values.email || ""} 
+                onChange={ (e)=>{
+                  setFieldValue( "email" , e.target.value )
                 }}
               />
             <FormControl sx={{ m: 1, width: '37ch' }} variant="outlined">
@@ -162,7 +162,7 @@ const CreateAccount = () => {
                 }}
               >
                 <MenuItem value={"Farmacias"}>Farmacias</MenuItem>
-                <MenuItem value={"Servicios Medicos<"}>Servicios Medicos</MenuItem>
+                <MenuItem value={"Servicios Medicos"}>Servicios Medicos</MenuItem>
                 <MenuItem value={"Laboratorios"}>Laboratorios</MenuItem>
               </Select>
             </FormControl>

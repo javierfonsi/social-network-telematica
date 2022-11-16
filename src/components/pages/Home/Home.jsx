@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <div className='home-main'>
-      <h2 className="current-user">Usuarios actuales</h2>
+      <h3 className="current-subtitle">Usuarios actuales</h3>
         {
           isLoading? <div className="container-load"><Loading/></div> :(
           <div className='card-main'>

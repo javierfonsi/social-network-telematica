@@ -11,15 +11,15 @@ const CardAds = ({ad}) => {
 
   return (
 
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
+    <Card sx={{ Width: 345, pt:4}}>
+      <CardMedia sx={{ Width:200, borderRadius:4}}
         component="img"
         height="140"
         //image="/static/images/cards/contemplative-reptile.jpg"
         image={`${ad?.img_Url}`}
         alt="green iguana"
       />
-      <CardContent>
+      <CardContent sx={{ Width: 200 }}>
         <Typography gutterBottom variant="h5" component="div">
         {ad?.product }
         </Typography>
@@ -28,8 +28,8 @@ const CardAds = ({ad}) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Consultar</Button>
+        <Button size="small">Comprar</Button>
       </CardActions>
     </Card>
   )
